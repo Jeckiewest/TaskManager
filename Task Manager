@@ -1,0 +1,33 @@
+class TaskManager:
+    def __init__(self):
+        self.tasks = []
+
+    def add_task(self, task):
+        """Add a task to the task manager."""
+        self.tasks.append(task)
+
+    def remove_task(self, task):
+        """Remove a task from the task manager."""
+        if task in self.tasks:
+            self.tasks.remove(task)
+        else:
+            print("Task not found in the task manager.")
+
+    def list_tasks(self):
+        """List all tasks in the task manager."""
+        if self.tasks:
+            print("Tasks:")
+            for i, task in enumerate(self.tasks, 1):
+                print(f"{i}. {task}")
+        else:
+            print("No tasks found in the task manager.")
+
+# Example usage:
+manager = TaskManager()
+manager.add_task("Complete project proposal")
+manager.add_task("Prepare presentation slides")
+manager.add_task("Review project documentation")
+manager.list_tasks()
+
+manager.remove_task("Prepare presentation slides")
+manager.list_tasks()
